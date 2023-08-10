@@ -58,4 +58,4 @@ def get_from_where_to_where(date):
 
 def get_transfer_amount_with_currency(date):
     """Вывод Суммы перевод и валюты"""
-    pass
+    return f"{date['operationAmount']['amount']} {date['operationAmount']['currency']['name']}"

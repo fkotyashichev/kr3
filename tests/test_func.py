@@ -76,9 +76,9 @@ def test_load_executed_date():
 
 
 def test_get_time(array_fixture):
-    assert get_time(array_fixture[0]) == '26.08.2019 Перевод организации'
-    assert get_time(array_fixture[1]) == '03.07.2019 Перевод организации'
-    assert get_time(array_fixture[3]) == '04.04.2019 Перевод со счета на счет'
+    assert get_time(array_fixture[0]) == '26.08.2019'
+    assert get_time(array_fixture[1]) == '03.07.2019'
+    assert get_time(array_fixture[3]) == '04.04.2019'
 
 
 def test_get_from_where_to_where(array_fixture):

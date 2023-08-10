@@ -1,4 +1,3 @@
-import datetime
 import json
 
 
@@ -22,13 +21,16 @@ def load_executed_date(filename):
 
 def get_time(date):
     """ВЫвод даты в нужном формате"""
-    pass
+    my_date = date['date']
+    my_date = my_date[:10]
+    my_date = my_date.split('-')
+    return '.'.join(reversed(my_date))
 
 
 def get_from_where_to_where(date):
     """Вывод Откуда и Куда прошла операция
     в замаскированном формате"""
-    pass
+    return date
 
 
 def get_transfer_amount_with_currency(date):

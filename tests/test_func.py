@@ -83,7 +83,7 @@ def test_get_time(array_fixture):
 
 def test_get_from_where_to_where(array_fixture):
     assert get_from_where_to_where(array_fixture[0]) == 'Maestro 1596 83** **** 5199 -> Счет **9589'
-    assert get_from_where_to_where(array_fixture[1]) == 'MasterCard 7158 30** **** 5199 -> Счет **5560'
+    assert get_from_where_to_where(array_fixture[1]) == 'MasterCard 7158 30** **** 6758 -> Счет **5560'
     assert get_from_where_to_where(array_fixture[3]) == 'Счет **8542 -> Счет **4188'
 
 

@@ -30,7 +30,30 @@ def get_time(date):
 def get_from_where_to_where(date):
     """Вывод Откуда и Куда прошла операция
     в замаскированном формате"""
-    return date
+    from_ = date['from']
+    from_ = from_.split(' ')
+    info = from_[0]
+    number = from_[-1]
+
+    if info.lower().startswith("счет"):
+        my_mask = '**'+number[-4:]
+    else:
+        my_mask = f"{number[:4]} {number[4:6]}** **** {number[-4:]}"
+
+    from_[-1] = my_mask
+
+    to_ = date['to']
+    to_ = to_.split(' ')
+    info = to_[0]
+    number = to_[-1]
+
+    if info.lower().startswith("счет"):
+        my_mask = '**'+number[-4:]
+    else:
+        my_mask = f"{number[:4]} {number[4:6]}** **** {number[-4:]}"
+
+    to_[-1] = my_mask
+    return f"{' '.join(from_)} -> {' '.join(to_)}"
 
 
 def get_transfer_amount_with_currency(date):

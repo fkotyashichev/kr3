@@ -71,8 +71,8 @@ def array_fixture():
     return date
 
 
-def test_load_executed_date(filename):
-    assert len(load_executed_date('operations.json')) == 100
+def test_load_executed_date():
+    assert len(load_executed_date('../operations.json')) == 5
 
 
 def test_get_time(array_fixture):

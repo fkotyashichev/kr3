@@ -4,7 +4,20 @@ import json
 
 def load_executed_date(filename):
     """Функция загрузки выполненных операций из файла"""
-    pass
+    with open(filename, 'r', encoding='UTF-8') as f:
+        all_date = json.load(f)
+
+    # Выбираем выполненные операции
+    good_date = []
+    for transaction in all_date:
+        if 'from' not in transaction:
+            continue
+        elif transaction['state'] == 'EXECUTED':
+            good_date.append(transaction)
+
+    # Сортируем по дате
+    good_date = sorted(good_date, key=lambda x: x['date'])
+    return good_date[-5:]
 
 
 def get_time(date):
